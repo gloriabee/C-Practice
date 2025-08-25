@@ -32,6 +32,14 @@ namespace MyFirstProject
             decimal money= Convert.ToDecimal(textMoney);
             Console.WriteLine(money);
 
+            bool value = true;
+            bool isMale = true;
+            bool isFemale = false;
+            Console.WriteLine(isFemale);
+            Console.ReadLine();
+
+
+
 
         }
     }
