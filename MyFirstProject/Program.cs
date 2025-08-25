@@ -10,20 +10,19 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            int age = 23;
-   
-            age /= 10;
-            Console.WriteLine(age);
-            string name = "Aba";
-            name += " is programming!";
 
-            int i = 0;
-         
-            Console.WriteLine(i++);
 
-            int firstNumber = 10;
-            int secondNumber = 3;
-            Console.WriteLine(firstNumber % secondNumber);
+            const int vat = 20;
+            const double percentVAT = vat / 100D;
+            int balance = 1000;
+            Console.WriteLine(balance * percentVAT);
+
+
+            const string version = "v1.0";
+            Console.WriteLine(version);
+            Console.WriteLine(vat);
+
+
 
            
 
