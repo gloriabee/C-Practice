@@ -10,22 +10,18 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello, My name is Gloria");
 
+            Console.Write("Enter your name:");
+            string name=Console.ReadLine();
 
-            const int vat = 20;
-            const double percentVAT = vat / 100D;
-            int balance = 1000;
-            Console.WriteLine(balance * percentVAT);
+            Console.Write("Enter your age:");
+            string ageInput = Console.ReadLine();
+            int age = Convert.ToInt32(ageInput);
 
-
-            const string version = "v1.0";
-            Console.WriteLine(version);
-            Console.WriteLine(vat);
-
-
-
+            Console.WriteLine("Your name is " + name +" and your age is "+age);
+            
            
-
         }
     }
 }
