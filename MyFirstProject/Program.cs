@@ -10,36 +10,22 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-
-            string textAge = "-23";
-            int age = Convert.ToInt32(textAge);
+            int age = 23;
+   
+            age /= 10;
             Console.WriteLine(age);
+            string name = "Aba";
+            name += " is programming!";
 
-            string textBigNumber = "-9000000000";
-            long bigNumber= Convert.ToInt64(textBigNumber);
-            Console.WriteLine(bigNumber);
+            int i = 0;
+         
+            Console.WriteLine(i++);
 
+            int firstNumber = 10;
+            int secondNumber = 3;
+            Console.WriteLine(firstNumber % secondNumber);
 
-            string textNegative = "-55.2";
-            double negative= Convert.ToDouble(textNegative);
-            Console.WriteLine(negative);
-
-            string textPrecision = "5.000001";
-            float precision= Convert.ToSingle(textPrecision);
-            Console.WriteLine(precision);
-
-            string textMoney = "14.99";
-            decimal money= Convert.ToDecimal(textMoney);
-            Console.WriteLine(money);
-
-            bool value = true;
-            bool isMale = true;
-            bool isFemale = false;
-            Console.WriteLine(isFemale);
-            Console.ReadLine();
-
-
-
+           
 
         }
     }
