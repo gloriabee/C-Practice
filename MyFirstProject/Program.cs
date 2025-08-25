@@ -10,18 +10,38 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, My name is Gloria");
+            Console.WriteLine("Enter  a day of the week: ");
+            int day= Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Enter your name:");
-            string name=Console.ReadLine();
-
-            Console.Write("Enter your age:");
-            string ageInput = Console.ReadLine();
-            int age = Convert.ToInt32(ageInput);
-
-            Console.WriteLine("Your name is " + name +" and your age is "+age);
             
-           
+
+            switch(day)
+            {
+                case 1: Console.WriteLine("Mon");
+                    break;
+                case 2: Console.WriteLine("Tue");
+                    break;
+                case 3:
+                    Console.WriteLine("Wed");
+                    break;
+                case 4:
+                    Console.WriteLine("Thu");
+                    break;
+                case 5:
+                    Console.WriteLine("Fri");
+                    break;
+                case 6:
+                    Console.WriteLine("Sat");
+                    break;
+                case 7:
+                    Console.WriteLine("Sun");
+                    break;
+                default:
+                    Console.WriteLine("Invaild, enter a value between 1 and 7");
+                    break;
+            }
+
+
         }
     }
 }
