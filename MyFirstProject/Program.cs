@@ -12,20 +12,26 @@ namespace MyFirstProject
         
         static void Main(string[] args)
         {
-            Console.WriteLine("What do you want to repeat?: ");
-            string message = Console.ReadLine();
+            Console.Write("Enter the first number:");
+            int num1=Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter the second number: ");
+            int num2=Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("How many times do you want to say hi?");
-            int times= Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Whats the value of "+num1 +" * "+num2);
+            Console.Write("Enter your answer: ");
+            int answer= Convert.ToInt32(Console.ReadLine());
+            int result = num1 * num2;
 
-            if (times <= 0)
+            while (answer != result)
             {
-                Console.WriteLine("Sorry, please enter a value above 0");
+                Console.WriteLine("Close but it was wrong!");
+                Console.Write("Enter your answer: ");
+                answer = Convert.ToInt32(Console.ReadLine());
             }
-            for (int i = 0; i < times; i++)
-            {
-                Console.WriteLine(message);
-            }
+            Console.WriteLine("Well done!");
+            
+
+
 
         }
     }
