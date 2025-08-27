@@ -14,22 +14,14 @@ namespace MyFirstProject
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter your name: ");
-            string name= Console.ReadLine();
+            Console.Write("Enter your message: ");
+            string input = Console.ReadLine();
+            Console.WriteLine(input[0]);
+            Console.WriteLine(input.Length);
 
-            Console.WriteLine($"Your name is {name}");
-
-            if (!name.Equals(""))
+            for(int i = input.Length-1; i >=0; i--)
             {
-                Console.WriteLine("0");
-            }
-            if (name != "")
-            {
-                Console.WriteLine("1");
-            }
-            if (string.IsNullOrEmpty(name))
-            {
-                Console.WriteLine("2");
+                Console.Write(input[i]);
             }
         }
     }
