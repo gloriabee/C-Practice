@@ -13,11 +13,17 @@ namespace MyFirstProject
 
         static void Main(string[] args)
         {
-            string name = "blob";
-            int age = 23;
-            string test = string.Concat("Your name is ", name, " and your age is ", age);
-            Console.WriteLine(test);
-
+           
+            Console.WriteLine("Enter your name");
+            string name = Console.ReadLine();
+            if(name!=string.Empty)
+            {
+                Console.WriteLine($"Your name is {name}");
+            }
+            else
+            {
+                Console.WriteLine("Name is empty");
+            }
         }
         }
     }
