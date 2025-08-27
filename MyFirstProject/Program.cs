@@ -12,25 +12,10 @@ namespace MyFirstProject
         
         static void Main(string[] args)
         {
-            Console.Write("Enter the first number:");
-            int num1=Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter the second number: ");
-            int num2=Convert.ToInt32(Console.ReadLine());
+            int age = -10;
 
-            Console.WriteLine("Whats the value of "+num1 +" * "+num2);
-            Console.Write("Enter your answer: ");
-            int answer= Convert.ToInt32(Console.ReadLine());
-            int result = num1 * num2;
-
-            while (answer != result)
-            {
-                Console.WriteLine("Close but it was wrong!");
-                Console.Write("Enter your answer: ");
-                answer = Convert.ToInt32(Console.ReadLine());
-            }
-            Console.WriteLine("Well done!");
-            
-
+            string result = age >= 0 ? "Valid" : "Invalid";
+            Console.WriteLine(result);
 
 
         }
