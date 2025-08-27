@@ -13,21 +13,14 @@ namespace MyFirstProject
         
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number: ");
-            string numInput = Console.ReadLine();
-            int num = 0;
+            Console.Write("Enter a number: ");
+            int num = Convert.ToInt32(Console.ReadLine());
 
-            bool success=int.TryParse(numInput, out num);
-            if (success)
+            for (int i = 1; i <= 10; i++)
             {
-                Console.WriteLine(num);
+  
+                Console.WriteLine("{0} * {1} = {2}", num, i, num * i);
             }
-            else
-            {
-                Console.WriteLine("Failed to convert");
-            }
-               
-
 
         }
     }
