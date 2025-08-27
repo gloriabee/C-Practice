@@ -9,31 +9,20 @@ namespace MyFirstProject
 {
     internal class Program
     {
-        
-        
+
+
         static void Main(string[] args)
         {
-            for (int i = 1; i <=15; i++)
-            {
-                if (i % 3 == 0 && i % 5 == 0)
-                {
-                    Console.WriteLine("FizzBuzz");
 
-                }
-                else if (i % 3 == 0)
-                {
-                    Console.WriteLine("Fizz");
-                }
-                else if (i % 5 == 0)
-                {
-                    Console.WriteLine("Buzz");
-                }
-                else
-                {
-                    Console.WriteLine(i);
-                }
-            }
+            string name = "Aba";
+            int age = 23;
+
+            Console.WriteLine("Name: "+name);
+            Console.WriteLine("Age: "+age);
+            Console.WriteLine("Name: "+name+"\nAge: "+age);
+            Console.WriteLine("Your name is {0} and your age is {1}",name,age);
+            Console.WriteLine("Name: {0} \n Age:{1}",name,age);
 
         }
+        }
     }
-}
