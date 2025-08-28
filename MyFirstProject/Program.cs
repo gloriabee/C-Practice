@@ -16,14 +16,22 @@ namespace MyFirstProject
         {
             int[] numbers = new int[]
             {
-                1,35,342,32,145,23,452,34
-            };
-            
-            Array.Clear(numbers,3,5);
-            foreach (var i in numbers)
+                90,199,299,32,234,34 };
+            Console.Write("Enter number to search: ");
+            int search= Convert.ToInt32(Console.ReadLine());
+
+            int position=Array.IndexOf(numbers, search);
+           
+            if(position>-1)
             {
-                Console.WriteLine(i);
+                Console.WriteLine($"Number {search} has been found at position {position}");
             }
+            else
+            {
+                Console.WriteLine("Not found");
+            }
+
+
 
         }
     }
