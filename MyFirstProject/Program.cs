@@ -14,34 +14,31 @@ namespace MyFirstProject
 
         static void Main(string[] args)
         {
-            int[] numbers = new int[4]
+            Dictionary<int, string> names=new Dictionary<int, string>();
+
+            names.Add(1, "Gloria");
+            names.Add(2, "Bo");
+            names.Add(3, "Cece");
+
+            Dictionary<int, string> addresses = new Dictionary<int, string>
             {
-                1,2,3,4 
+                {1,"Yangon" },
+                {2,"Thailand" },
+                {3,"Vietnam" }
             };
 
-            List<int> listNumbers = new List<int>();
-            listNumbers.Add(1);
-            listNumbers.Add(2);
-            listNumbers.Add(3);
-
-            for (int i = 0; i < listNumbers.Count; i++)
+            for (int i = 0; i < addresses.Count; i++)
             {
-                Console.WriteLine(listNumbers[i]);
-            }
-
-            listNumbers.Insert(3, 30);
-
-            foreach (var i in listNumbers)
+                //Console.WriteLine(addresses.ElementAt(i));
+                KeyValuePair<int, string> pair = names.ElementAt(i);
+                Console.WriteLine($"{pair.Key} - {pair.Value}");
+                
+            }       
+            
+            foreach(KeyValuePair<int,string> item in addresses)
             {
-                Console.WriteLine(i);
+                Console.WriteLine($"{item.Key} - {item.Value}");
             }
-
-            listNumbers.RemoveAt(2);
-            foreach (var i in listNumbers)
-            {
-                Console.WriteLine(i);
-            }
-
         }
     }
     }
