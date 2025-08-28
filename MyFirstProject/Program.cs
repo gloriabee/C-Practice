@@ -14,16 +14,16 @@ namespace MyFirstProject
 
         static void Main(string[] args)
         {
-            int[] angles = new int[3];
-            for (int i = 0; i < angles.Length; i++)
+            int[] numbers = new int[]
             {
-                Console.Write($"Enter angle {i+1}: ");
-                angles[i] = Convert.ToInt32(Console.ReadLine());
-            }
-
-            string isValid = angles.Sum() <= 180 ? "Valid" : "Invalid";
-            Console.WriteLine(isValid);
+                1,35,342,32,145,23,452,34
+            };
             
+            Array.Sort(numbers);
+            foreach (int number in numbers)
+            {
+                Console.Write($"{number} ");
+            }
 
         }
     }
