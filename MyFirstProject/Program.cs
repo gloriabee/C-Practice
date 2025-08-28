@@ -12,37 +12,28 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            int[,] array2DDeclaration = new int[3, 3];
-            // [0] [0] [0]
-            // [0] [0] [0]
-            // [0] [0] [0]
-
-            int[,,] array3DDeclaration= new int[3,3,3];
-
-            int[,] array2DInitialized = { {1,2}, {3,4} };
-            // [1] [2]
-            // [3] [4]
-
-            Console.WriteLine(array2DInitialized[0,0]);
-            array2DInitialized[0, 0] = 5;
-            Console.WriteLine(array2DInitialized[0, 0]);
-
-            string[,] tictactoe =
+            string[,,] simple3DArray =
             {
                 {
-                    "O","X","X"
+                    { 
+                        "000","001"
+                    },
+                    {
+                        "010","011"
+                    }
                 },
-                {
-                    "O","O","X"
+                 {
+                    {
+                        "100","101"
+                    },
+                    {
+                        "110","111"
+                    }
                 },
-                {
-                    "X","X","O"
-                }
+
             };
 
-            Console.WriteLine(tictactoe[1,2]);
-
-
+            Console.WriteLine(simple3DArray[1,1,1]);
         }
     }
 }
