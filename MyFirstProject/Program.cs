@@ -14,36 +14,29 @@ namespace MyFirstProject
 
         static void Main(string[] args)
         {
-            Console.Write("Enter the password: ");
-            string password = Console.ReadLine();
+            int[] numbers = new int[3];
 
-            Console.Write("Enter password again: ");
-            string passwordC= Console.ReadLine();
+            
 
-            if (!password.Equals(string.Empty) && !passwordC.Equals(string.Empty))
+
+            for (int i = 0; i < numbers.Length; i++)
             {
-                if (password.Length >= 6 && passwordC.Length >= 6) {
-                    if (password == passwordC)
-                    {
-                        Console.WriteLine("Password match");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Password do not match");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Please enter password count above 6 characters");
-                }
 
-               
+                Console.Write("Enter number: ");
+                numbers[i] = Convert.ToInt32(Console.ReadLine());
             }
-            else
+
+            for (int i = 0; i < numbers.Length; i++)
             {
-                Console.WriteLine("Enter password again");
+
+                Console.WriteLine(numbers[i]);
+                
             }
-               
+
+            foreach (int i in numbers)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
     }
