@@ -10,35 +10,33 @@ namespace MyFirstProject
 {
     internal class Program
     {
-
-
         static void Main(string[] args)
         {
-            Dictionary<int, string> names=new Dictionary<int, string>();
+            List<int> odd = new List<int>();
+            List<int> even = new List<int>();
 
-            names.Add(1, "Gloria");
-            names.Add(2, "Bo");
-            names.Add(3, "Cece");
-
-            Dictionary<int, string> addresses = new Dictionary<int, string>
+            for(int i = 0; i <= 20; i++)
             {
-                {1,"Yangon" },
-                {2,"Thailand" },
-                {3,"Vietnam" }
-            };
-
-            for (int i = 0; i < addresses.Count; i++)
+                if (i % 2 == 0)
+                {
+                    even.Add(i);
+                }
+                else
+                {
+                    odd.Add(i);
+                }
+            }
+            Console.WriteLine("Odd Numbers");
+            foreach (var item in odd)
             {
-                //Console.WriteLine(addresses.ElementAt(i));
-                KeyValuePair<int, string> pair = names.ElementAt(i);
-                Console.WriteLine($"{pair.Key} - {pair.Value}");
-                
-            }       
-            
-            foreach(KeyValuePair<int,string> item in addresses)
+                Console.WriteLine(item+" ");
+            }
+            Console.WriteLine("Even Numbers");
+            foreach (var item in even)
             {
-                Console.WriteLine($"{item.Key} - {item.Value}");
+               
+                Console.WriteLine(item + " ");
             }
         }
     }
-    }
+}
