@@ -19,10 +19,10 @@ namespace MyFirstProject
                 1,35,342,32,145,23,452,34
             };
             
-            Array.Reverse(numbers);
-            foreach (int number in numbers)
+            Array.Clear(numbers,3,5);
+            foreach (var i in numbers)
             {
-                Console.Write($"{number} ");
+                Console.WriteLine(i);
             }
 
         }
