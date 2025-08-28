@@ -14,24 +14,33 @@ namespace MyFirstProject
 
         static void Main(string[] args)
         {
-            int[] numbers = new int[]
+            int[] numbers = new int[4]
             {
-                90,199,299,32,234,34 };
-            Console.Write("Enter number to search: ");
-            int search= Convert.ToInt32(Console.ReadLine());
+                1,2,3,4 
+            };
 
-            int position=Array.IndexOf(numbers, search);
-           
-            if(position>-1)
+            List<int> listNumbers = new List<int>();
+            listNumbers.Add(1);
+            listNumbers.Add(2);
+            listNumbers.Add(3);
+
+            for (int i = 0; i < listNumbers.Count; i++)
             {
-                Console.WriteLine($"Number {search} has been found at position {position}");
-            }
-            else
-            {
-                Console.WriteLine("Not found");
+                Console.WriteLine(listNumbers[i]);
             }
 
+            listNumbers.Insert(3, 30);
 
+            foreach (var i in listNumbers)
+            {
+                Console.WriteLine(i);
+            }
+
+            listNumbers.RemoveAt(2);
+            foreach (var i in listNumbers)
+            {
+                Console.WriteLine(i);
+            }
 
         }
     }
