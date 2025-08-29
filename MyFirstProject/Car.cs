@@ -12,11 +12,31 @@ namespace MyFirstProject
         private string _model = "";
         private string _brand = "";
 
+        //property
+   
+        public string Model { get => _model; set => _model = value; }
+        public string Brand { get => _brand; 
+            set{
+                if (string.IsNullOrEmpty(value))
+                {
+                    Console.WriteLine("You entered nothing!");
+                    _brand = "DefaultValue";
+                }
+                else
+                {
+                    _brand = value;
+                }
+                   
+            } }
+
+
+
         //Constructor
         public Car(string model,string brand) {
-            _model = model;
-            _brand = brand;
-            Console.WriteLine($"A {brand} of the model {_model} has been created");
+            Model = model;
+            Brand = brand;
+            Console.WriteLine($"A {Brand} of the model {Model} has been created");
+
         }
 
 
