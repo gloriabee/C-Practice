@@ -12,21 +12,22 @@ namespace MyFirstProject
     internal class Program
     {
         static string name = "Aba";
+       
         static void Main(string[] args)
+            
         {
-            Console.Title = name;
-            Console.WriteLine("Enter a number, I'll add 10 to it!");
-            int num1 = int.Parse(Console.ReadLine());
-            Console.Write(AddTwoValues(num1,10));
-
+            int myNumber = 5;
+            ModifyValue(ref myNumber);
+            Console.WriteLine(myNumber);
         }
 
-        static int AddTwoValues(int value1,int value2)
+        static void ModifyValue(ref int number)
         {
-            int result=value1+value2;
-            return result;
-
+            number += 10;
         }
+        
+        // ref The original value is changed because we passed it by reference.
+      
     }
 
     }
