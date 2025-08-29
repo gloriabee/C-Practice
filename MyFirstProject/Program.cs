@@ -8,32 +8,27 @@ using System.Threading.Tasks;
 
 namespace MyFirstProject
 {
+    class Test
+    {
+        public static void something()
+        {
+            Console.WriteLine("something");
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
         {
-            string[,,] simple3DArray =
-            {
-                {
-                    { 
-                        "000","001"
-                    },
-                    {
-                        "010","011"
-                    }
-                },
-                 {
-                    {
-                        "100","101"
-                    },
-                    {
-                        "110","111"
-                    }
-                },
+           //Test test = new Test();
+            Test.something();
+            WelcomeMessage();
+           
+        }
+        // static means can call anywhere. don't need to create instance. accessible from everywhere.
 
-            };
-
-            Console.WriteLine(simple3DArray[1,1,1]);
+        static void WelcomeMessage()
+        {
+            Console.WriteLine("Welcome user");
         }
     }
 }
