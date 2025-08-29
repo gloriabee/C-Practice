@@ -16,14 +16,14 @@ namespace MyFirstProject
         static void Main(string[] args)
             
         {
-            int myNumber = 5;
-            ModifyValue(ref myNumber);
-            Console.WriteLine(myNumber);
+            int myValue;
+            GetValues(out myValue);
+            Console.WriteLine(myValue);
         }
 
-        static void ModifyValue(ref int number)
+        static void GetValues(out int result)
         {
-            number += 10;
+            result = 42;
         }
         
         // ref The original value is changed because we passed it by reference.
