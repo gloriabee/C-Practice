@@ -11,23 +11,19 @@ namespace MyFirstProject
 
     internal class Program
     {
+        static string name = "Aba";
         static void Main(string[] args)
         {
-            //bool success=int.TryParse("123", out int result);
-            //Console.WriteLine(success);
-            CreateAndPrintArray();
+            Console.Title = name;
 
+            Console.Write(AddTwoValues(100, 200));
 
         }
 
-        static void CreateAndPrintArray()
+        static int AddTwoValues(int value1,int value2)
         {
-            int[] numbers = new int[3] { 0, 1, 2 };
-            foreach (int i in numbers)
-            {
-                Console.WriteLine($"{i}");
-            }
-
+            int result=value1+value2;
+            return result;
 
         }
     }
