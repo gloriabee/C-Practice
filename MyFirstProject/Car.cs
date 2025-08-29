@@ -8,9 +8,15 @@ namespace MyFirstProject
 {
     internal class Car
     {
+        //ာmember variable 
+        private string _model = "";
+        private string _brand = "";
+
         //Constructor
-        public Car() {
-            Console.WriteLine("An object of Car has created");
+        public Car(string model,string brand) {
+            _model = model;
+            _brand = brand;
+            Console.WriteLine($"A {brand} of the model {_model} has been created");
         }
 
 

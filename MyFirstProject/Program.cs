@@ -13,10 +13,12 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
+            
             //Creating the object of the car
-            Car audi= new Car();
-            Car bmw=new Car();
-          
+            Car audi= new Car("A3","Audi");
+       
+            Car bmw=new Car("I7","BMW");
+            
 
             Console.ReadKey();
             
