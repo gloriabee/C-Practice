@@ -8,27 +8,30 @@ using System.Threading.Tasks;
 
 namespace MyFirstProject
 {
-    class Test
-    {
-        public static void something()
-        {
-            Console.WriteLine("something");
-        }
-    }
+
     internal class Program
     {
         static void Main(string[] args)
         {
-           //Test test = new Test();
-            Test.something();
-            WelcomeMessage();
-           
-        }
-        // static means can call anywhere. don't need to create instance. accessible from everywhere.
+            //bool success=int.TryParse("123", out int result);
+            //Console.WriteLine(success);
+            CreateAndPrintArray();
 
-        static void WelcomeMessage()
+
+        }
+
+        static void CreateAndPrintArray()
         {
-            Console.WriteLine("Welcome user");
+            int[] numbers = new int[3] { 0, 1, 2 };
+            foreach (int i in numbers)
+            {
+                Console.WriteLine($"{i}");
+            }
+
+
         }
     }
-}
+
+    }
+
+
