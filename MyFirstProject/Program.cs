@@ -15,8 +15,9 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
             Console.Title = name;
-
-            Console.Write(AddTwoValues(100, 200));
+            Console.WriteLine("Enter a number, I'll add 10 to it!");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.Write(AddTwoValues(num1,10));
 
         }
 
