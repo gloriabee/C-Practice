@@ -14,19 +14,18 @@ namespace MyFirstProject
         static string name = "Aba";
        
         static void Main(string[] args)
-            
         {
-            int myValue;
-            GetValues(out myValue);
-            Console.WriteLine(myValue);
+            int a = 5, b = 3, sum, product;
+            Calculate(a,b,out sum,out product);
+            Console.WriteLine();
         }
 
-        static void GetValues(out int result)
+        static void Calculate(int x,int y, out int sum,out int product)
         {
-            result = 42;
+            sum = x + y;
+            product = x * y;
+            Console.WriteLine($"Sum: {sum}, Product: {product}");
         }
-        
-        // ref The original value is changed because we passed it by reference.
       
     }
 
