@@ -14,24 +14,20 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            int result = Add(5);
-            Console.WriteLine(result);
-           
+            string nameInput = "Aba";
+            int ageInput = 23;
+            string addressInput = "1 Something road";
 
-            PrintName("Aba");
-            PrintName();
+            PrintDetails(name:nameInput,
+                age:ageInput, 
+                address:addressInput);
             Console.ReadLine();
         }
-
-        static void PrintName(string name=default)
+        static void PrintDetails(string name,int age,string address)
         {
-            Console.WriteLine($"My name is {name}");
-        }
-
-        public static int Add(int a, int b=default)
-        {
-            Console.WriteLine($"‌ေa={a}and b= {b}");
-            return a + b;
+            Console.WriteLine($"Name: {name}");
+            Console.WriteLine($"Age: {age}");
+            Console.WriteLine($"Address: {address}");
         }
 
 
