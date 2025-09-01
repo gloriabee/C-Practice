@@ -14,22 +14,29 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            string nameInput = "Aba";
-            int ageInput = 23;
-            string addressInput = "1 Something road";
+            
+            int width = ReadInt("Enter Width: ");
+            int height = ReadInt("Enter Height: ");
 
-            PrintDetails(name:nameInput,
-                age:ageInput, 
-                address:addressInput);
-            Console.ReadLine();
+            int result= FindArea(width, height);
+            Console.Write($"The area of the triangle is {result}");
+            Console.ReadKey();
+
         }
-        static void PrintDetails(string name,int age,string address)
+
+        static int ReadInt(string message)
         {
-            Console.WriteLine($"Name: {name}");
-            Console.WriteLine($"Age: {age}");
-            Console.WriteLine($"Address: {address}");
+            Console.Write(message);
+            return Convert.ToInt32(Console.ReadLine());
         }
 
+       
+        static int FindArea(int width,int height)
+        {
+            return (width * height)/2;
+        }
+        
+        
 
     }
 
