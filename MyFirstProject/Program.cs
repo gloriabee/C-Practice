@@ -26,13 +26,13 @@ namespace MyFirstProject
                     looping = false;
                 }
                 
-                catch (OverflowException)
+                catch (OverflowException e)
                 {
-                    Console.WriteLine("Please only a number less than 2 billion!");
+                    Console.WriteLine($"Errors: {e.Message}");
                 }
-                catch (FormatException)
+                catch (FormatException e)
                 {
-                    Console.WriteLine("Please only enter numbers!");
+                    Console.WriteLine($"Error: {e.Message}");
                 }
                 catch (Exception)
                 {
