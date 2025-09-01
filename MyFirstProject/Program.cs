@@ -13,22 +13,47 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            
-            //Creating the object of the car
-            Car audi= new Car("A3","Audi");
-            
-            Car bmw=new Car("I7","BMW");
 
-            Console.WriteLine("Please enter the Brand name");
+            //int num = ReadInt("Enter a number");
+            //Console.WriteLine(num);
 
-            audi.Brand = Console.ReadLine();
+            //int angle = ReadInt("Enter a angle");
+            //Console.WriteLine(angle);
 
-            //Getting Brandname
-            Console.WriteLine("You entered "+audi.Brand);
-           
+            //int firstNum = ReadInt("Enter first number: ");
+            //int secondNum = ReadInt("Enter second number: ");
+            //int result = Add(firstNum, secondNum);
+            //Console.WriteLine(result);
+
+            string name = ReadString("Enter your name");
+            int age = ReadInt("Enter your age");
+            string details = UserDetails(name, age);
+            Console.WriteLine(details);
+
             Console.ReadKey();
-            
+
+
         }
+        static int ReadInt(string message)
+        {
+            Console.Write($"Enter a  {message}: ");
+            return Convert.ToInt32(Console.ReadLine());
+        }
+        static int Add(int a,int b)
+        {
+            return a+b;
+        }
+
+        static string ReadString(string message)
+        {
+            Console.Write($"{message}");
+            return Console.ReadLine();
+        }
+        static string UserDetails(string name, int age)
+        {
+            return $"Hello my name is {name} and my age is {age}";
+        }
+
 
     }
 
