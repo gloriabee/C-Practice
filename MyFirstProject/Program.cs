@@ -14,32 +14,40 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            int[] nums = {10,30,242,12,23};
-            if (nums.Length == -1)
+            bool looping = true;
+            while (looping)
             {
-                Console.WriteLine("Array is empty");
-            }
-            else
-            {
-                int sumResult=SumOfNumbers(nums);
-                Console.WriteLine($"The sum of int array is {sumResult}");
+                try
+                {
+
+                    Console.WriteLine("Enter a number: ");
+                    int num = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine(num);
+                    looping = false;
+                }
+                
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Please only a number less than 2 billion!");
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please only enter numbers!");
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Something has went wrong");
+                }
+
             }
 
-            Console.ReadKey();
+            Console.WriteLine("GoodBye");
+           
+
+            Console.ReadLine();
         }
-        static int SumOfNumbers(int[] nums)
-        {
-            int sum = 0;
-            for(int i = 0; i < nums.Length; i++)
-            {
-                sum += nums[i];
-                
-            };
-            return sum
-            ;
-        }
-        
-        
+
+
 
     }
 
