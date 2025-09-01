@@ -14,37 +14,32 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            bool looping = true;
-            while (looping)
+            string name = "Aba";
+            int age = 35;
+            PrintDetails(name,age);
+
+            if (age > 18)
             {
-                try
-                {
-
-                    Console.WriteLine("Enter a number: ");
-                    int num = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(num);
-                    looping = false;
-                }
-                
-                catch (OverflowException e)
-                {
-                    Console.WriteLine($"Errors: {e.Message}");
-                }
-                catch (FormatException e)
-                {
-                    Console.WriteLine($"Error: {e.Message}");
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Something has went wrong");
-                }
-
+                Console.WriteLine("18+");
             }
 
-            Console.WriteLine("GoodBye");
-           
 
+            string message = ReadFromConsole("Enter anything: ");
+            Console.WriteLine(message);
             Console.ReadLine();
+        }
+
+        static string ReadFromConsole(string str)
+        {
+            Console.Write(str);
+            return Console.ReadLine();
+        }
+        static void PrintDetails(string name, int age)
+        {
+            Console.WriteLine($"{name} - {age}");
+            Console.WriteLine($"{name} - {age}");
+            Console.WriteLine($"{name} - {age}");
+            Console.WriteLine($"{name} - {age}");
         }
 
 
