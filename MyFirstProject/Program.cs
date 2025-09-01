@@ -14,26 +14,29 @@ namespace MyFirstProject
     {
         static void Main(string[] args)
         {
-            
-            int width = ReadInt("Enter Width: ");
-            int height = ReadInt("Enter Height: ");
+            int[] nums = {10,30,242,12,23};
+            if (nums.Length == -1)
+            {
+                Console.WriteLine("Array is empty");
+            }
+            else
+            {
+                int sumResult=SumOfNumbers(nums);
+                Console.WriteLine($"The sum of int array is {sumResult}");
+            }
 
-            int result= FindArea(width, height);
-            Console.Write($"The area of the triangle is {result}");
             Console.ReadKey();
-
         }
-
-        static int ReadInt(string message)
+        static int SumOfNumbers(int[] nums)
         {
-            Console.Write(message);
-            return Convert.ToInt32(Console.ReadLine());
-        }
-
-       
-        static int FindArea(int width,int height)
-        {
-            return (width * height)/2;
+            int sum = 0;
+            for(int i = 0; i < nums.Length; i++)
+            {
+                sum += nums[i];
+                
+            };
+            return sum
+            ;
         }
         
         
