@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Dynamic;
 using System.Globalization;
 using System.Linq;
+using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,35 +14,30 @@ namespace MyFirstProject
 
     internal class Program
     {
-        enum CarColor: byte{
-                Orange=1,
-                Blue,
-                Green,
-                Red,
-                Yellow
-            };
-      
-            static void PaintCar(CarColor cc)
-        {
-            Console.WriteLine($"The car was painted {cc} with the code {(int)cc}");
-        }
-      
+
         // End of Functions 
 
         static void Main(string[] args)
         {
+            Animal dog = new Animal("Buddy", "Woof", 3);
+            Animal cat = new Animal("Whiskers", "Meow");
 
-            CarColor car1 = CarColor.Blue;
-            CarColor yellowCar = CarColor.Yellow;
-            PaintCar(car1);
-            PaintCar(yellowCar);
-            Console.WriteLine(car1);
-            Console.WriteLine(yellowCar);
+            dog.PrintInfo();
+            cat.PrintInfo();
+
+            Console.WriteLine($"Total Animals: {Animal.numOfAnimals}");
+
+            // Using struct 
+            Dimensions cage = new Dimensions(2.5, 1.5);
+            Console.WriteLine($"Cage area: {cage.Area()} square meters");
+
             Console.ReadKey();
-        }
 
+        }
+        
 
     }
 }
+
 
 
