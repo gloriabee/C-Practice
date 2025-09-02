@@ -19,17 +19,29 @@ namespace MyFirstProject
 
         static void Main(string[] args)
         {
-            Animal dog = new Animal("Buddy", "Woof", 3);
-            Animal cat = new Animal("Whiskers", "Meow");
+            // use inner class
+            Animal.Info.ShowKingdom();
 
-            dog.PrintInfo();
-            cat.PrintInfo();
+            // polymorphism: Base class reference can hold derived class objects 
+            Animal myDog = new Dog("Buddy");
+            Animal myCat = new Cat("Whiskers");
 
-            Console.WriteLine($"Total Animals: {Animal.numOfAnimals}");
+            // abstract+ override methods
+            myDog.MakeSound();
+            myCat.MakeSound();
 
-            // Using struct 
-            Dimensions cage = new Dimensions(2.5, 1.5);
-            Console.WriteLine($"Cage area: {cage.Area()} square meters");
+            // virtual+ override methods 
+            myDog.Eat();
+            myCat.Eat();
+
+            // Interface methods
+            Imovable mover1 = new Dog("Max");
+            Imovable mover2 = new Cat("Luna");
+            mover1.Move();
+            mover2.Move();
+
+            // Normal method from abstract class
+            myCat.Sleep();
 
             Console.ReadKey();
 

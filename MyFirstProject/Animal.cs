@@ -7,56 +7,44 @@ using System.Threading.Tasks;
 
 namespace MyFirstProject
 {
-    struct Dimensions
+    // interface
+    interface Imovable
     {
-        public double Length;
-        public double Width;
-
-        public Dimensions(double length,double width)
-        {
-            Length = length;
-            Width = width;
-        }
-
-        public double Area()
-        {
-            return Length * Width;
-        }
+        void Move();
     }
-    internal class Animal
+    
+    internal abstract class Animal
     {
+        public string Name { get; set; }
 
-        // static member (shared by all objects)
-        public static int numOfAnimals = 0;
-
-        // fields and properties 
-        private string name;
-        public string Sound { get; set; }
-        public int Id { get; private set; }
-
-        // Nullable type (age may or may not be known)
-        public int? Age { get; set; }
-
-        // Constructor 
-        public Animal(string name, string sound, int? age = null)
+        public Animal(string name)
         {
-            this.name = name;
-            this.Sound = sound;
-            this.Age = age;
-
-            numOfAnimals++;
-            this.Id = numOfAnimals;
+            Name = name;
         }
 
-        // Methods
+        // abstract method (must be implemented by derived classes)
+        public abstract void MakeSound();
 
-        public string GetName() => name;
-
-        public void PrintInfo()
+        // Normal method (can be inherited directly_
+        public void Sleep()
         {
-            string ageInfo = Age.HasValue ? Age.Value.ToString() : "Unknown";
-            Console.WriteLine($"Animal {Id}: {name}, Sound: {Sound}, Age: {ageInfo}");
+            Console.WriteLine($"{Name} is sleeping...");
         }
 
+        // Virtual method (can be overriden)
+        public virtual void Eat()
+        {
+            Console.WriteLine($"{Name} is eating food...");
+        }
+
+      
+        // Inner class
+        public class Info
+        {
+            public static void ShowKingdom()
+            {
+                Console.WriteLine("All animals belong to Kingdom: Animalia");
+            }
+        }
     }
 }
