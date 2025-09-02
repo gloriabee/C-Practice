@@ -81,32 +81,84 @@ namespace MyFirstProject
 
         static void Main(string[] args)
         {
-            //SayHello();
-            //double x = 5, y = 4;
-            //Console.WriteLine($"5+4 = {GetSum(x, y)}");
-            //Console.WriteLine($"With default values: {GetSum()}");
-            //Console.WriteLine($"X= {x}");
-            //Console.WriteLine($"Y= {y}");
+            
+
+            // Getting the current Date and Time
+            Console.WriteLine($"Todays' Date: {DateTime.Today}");
+            Console.WriteLine($"Todays' Date & Time : {DateTime.Now}");
+            Console.WriteLine($"current UTC date & time : {DateTime.UtcNow}");
+
+            // Creating Dates
+            DateTime awesomeDate = new DateTime(1974, 12, 21);
+            DateTime withTime = new DateTime(2025, 9, 2, 14, 30, 0);
+            Console.WriteLine($"withTime: {withTime}");
+            Console.WriteLine($"Day of the week : {awesomeDate.DayOfWeek}");
 
 
-            //int solution;
-            //DoubleIt(15, out solution);
-            //Console.WriteLine($"15 *2 = {solution}");
+            // Date Arithmetic 
+            DateTime tomorrow = DateTime.Now.AddDays(1);
+            DateTime nextMonth = DateTime.Now.AddMonths(1);
+            DateTime nextYear = DateTime.Now.AddYears(1);
+            Console.WriteLine($"Tomorrow: {tomorrow}, next Month: {nextMonth}, next Year: {nextYear}");
 
 
+            TimeSpan lunchTime = new TimeSpan(12, 30, 0);
+            lunchTime = lunchTime.Subtract(new TimeSpan(0, 15, 0));
+            Console.WriteLine($"New Time: {lunchTime.ToString()}");
+            TimeSpan duration = DateTime.Now - new DateTime(2024, 12, 6);
+            Console.WriteLine(duration.Days);
 
-            //int num3 = 10;
-            //int num4 = 20;
-            //Console.WriteLine($"Before Swap num1: {num3} and num4 {num4}");
-            //Swap(ref num3,ref num4);
-            //Console.WriteLine($"After Swap num1: {num3} and num4 {num4}");
 
-            //Console.WriteLine($"1+2+3 ={GetSumMore(1,2,3)}");
+            // Formatting Dates
+            DateTime now = DateTime.Now;
 
-            //PrintInfo(zipCode: 151437, name: "Derek");
+            Console.WriteLine(now.ToString("yyyy-MM-dd"));
+            Console.WriteLine(now.ToString("dddd,MMMM dd,yyyy"));
+            Console.WriteLine(now.ToString("hh:mm tt"));
+            Console.WriteLine(now.ToLongDateString());
+            Console.WriteLine(now.ToShortTimeString());
 
-            Console.WriteLine($"5.0 + 4.0 = {GetSum2(5.0,4.0)}");
-            Console.WriteLine($"5.0 + 4.0 = {GetSum2("5.0", "4.0")}");
+            // Parsing Strings to DateTime 
+            string input = "09/02/2025 14:30";
+            DateTime parsed = DateTime.Parse(input);
+            Console.WriteLine(parsed);
+
+            if(DateTime.TryParse(input,out DateTime safeParsed))
+            {
+                Console.WriteLine(safeParsed);
+            }
+
+
+            // Comparing Dates 
+            DateTime d1 = DateTime.Now;
+            DateTime d2 = d1.AddDays(1);
+
+            Console.WriteLine(d1<d2);
+            Console.WriteLine(d1==d2);
+
+            int result = DateTime.Compare(d1, d2);
+            Console.WriteLine(result);
+            // -1 means earlier, 0 means same and 1 means d1. 
+            
+
+            //Calculating Age/Duration
+
+            DateTime birthDate = new DateTime(2000, 11, 18);
+            int age = DateTime.Now.Year - birthDate.Year;
+            if (DateTime.Now.DayOfYear < birthDate.DayOfYear) age--;
+            Console.WriteLine($"Age: {age}");
+
+            // Timespan with DateTime 
+            DateTime start = DateTime.Now;
+            DateTime end = start.AddHours(6).AddMinutes(45);
+
+            TimeSpan diff = end - start;
+            Console.WriteLine(diff.TotalMinutes);
+
+            // Special Values
+            Console.WriteLine(DateTime.MinValue);
+            Console.WriteLine(DateTime.MaxValue);
+
             Console.ReadKey();
         }
 
