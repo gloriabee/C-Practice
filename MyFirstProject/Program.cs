@@ -20,25 +20,25 @@ namespace MyFirstProject
 
         static void Main(string[] args)
         {
-            // LINQ Query Syntax
-            IList<Student> studentList = new List<Student>()
-          {
-                new Student() { StudentID = 1, StudentName = "John", Age = 13} ,
-                new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
-                new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
-                new Student() { StudentID = 4, StudentName = "Ram" , Age = 20} ,
-                new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
-          };
+            // LINQ Method Syntax
 
-            var teenAgerStudent = from stu in studentList
-                                  where stu.Age>12 && stu.Age < 20
-                                  select stu;
-
-            foreach (var student in teenAgerStudent)
+            IList<string> stringList = new List<String>()
             {
-                Console.WriteLine(student.StudentID+" "+student.StudentName + " "+ student.Age);
-            }
+                              "C# Tutorials",
+                "VB.NET Tutorials",
+                "Learn C++",
+                "MVC Tutorials" ,
+                "Java"
+            };
 
+            // LINQ Method Syntax 
+
+            var result = stringList.Where(s => s.Contains("Tutorials"));
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
             Console.ReadKey();
 
         }
