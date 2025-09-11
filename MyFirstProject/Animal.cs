@@ -8,43 +8,22 @@ using System.Threading.Tasks;
 namespace MyFirstProject
 {
     // interface
-    interface Imovable
-    {
-        void Move();
-    }
     
-    internal abstract class Animal
+    
+     class Animal
     {
         public string Name { get; set; }
-
-        public Animal(string name)
-        {
-            Name = name;
+        public Animal(string name="No Name") {
+            Name=name;
         }
 
-        // abstract method (must be implemented by derived classes)
-        public abstract void MakeSound();
-
-        // Normal method (can be inherited directly_
-        public void Sleep()
+        //T represents unknown data type for working parameter. 
+        public static void GetSum<T>(ref T num1,ref T num2)
         {
-            Console.WriteLine($"{Name} is sleeping...");
+            double dblX = Convert.ToDouble(num1);
+            double dblY = Convert.ToDouble(num2);
+            Console.WriteLine($"{dblX} + {dblY} = {dblX+dblY}");
         }
-
-        // Virtual method (can be overriden)
-        public virtual void Eat()
-        {
-            Console.WriteLine($"{Name} is eating food...");
-        }
-
       
-        // Inner class
-        public class Info
-        {
-            public static void ShowKingdom()
-            {
-                Console.WriteLine("All animals belong to Kingdom: Animalia");
-            }
-        }
     }
 }

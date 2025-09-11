@@ -16,27 +16,77 @@ namespace MyFirstProject
     internal class Program
     {
 
-        delegate double doubleIt(double val);
+
 
         static void Main(string[] args)
 
         {
-            doubleIt dblIt = x => x * 2;
-            Console.WriteLine($"5 * 2 = {dblIt(5)}");
+            List<Animal> animalList = new List<Animal>();
+            List<int> numList = new List<int>();
 
-            List<int> numList = new List<int> { 1, 9, 2, 6, 3 };
-            var evenList = numList.Where(a => a % 2 == 0).ToList();
-            foreach(var i in evenList)
+            numList.Add(24);
+
+            animalList.Add(new Animal() { Name = "Dog" });
+            animalList.Add(new Animal() { Name = "Paul" });
+            animalList.Add(new Animal() { Name = "Sally" });
+
+            animalList.Insert(1, new Animal() { Name = "steve" });
+            animalList.RemoveAt(1);
+
+            Console.WriteLine($"Num of Animals: {animalList.Count()}");
+
+            foreach (Animal a in animalList)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(a.Name);
             }
-            Console.WriteLine();
+
+            int x = 5, y = 4;
+            Animal.GetSum<int>(ref x, ref y);
+
+            string strX = "10", strY = "23";
+            Animal.GetSum<string>(ref strX, ref strY);
+
+            Rectangle<int> rec1 = new Rectangle<int>(20, 50);
+            Console.WriteLine(rec1.GetArea());
+
+            Rectangle<string> rec2 = new Rectangle<string>("20", "12");
+            Console.WriteLine(rec2.GetArea());
             Console.ReadLine();
         }
+
+        public struct Rectangle<T>
+        {
+            private T width;
+            private T length;
+
+            public T Width
+            {
+                get { return width; }
+                set { width=value; }
+            }
+
+            public T Length
+            {
+                get { return length; }
+                set { length = value; }
+            }
+
+            public Rectangle(T w,T l)
+            {
+                width = w;
+                length = l;
+            }
+
+            public string GetArea()
+            {
+                double dblWidth= Convert.ToDouble(width);
+                double dblLength= Convert.ToDouble(length);
+                return string.Format($"{Width} * {Length} = {dblWidth * dblLength}");
+            }
         }
-       
-        
-        
+
+
+    }
 
     }
 
