@@ -57,74 +57,41 @@ namespace MyFirstProject
         //}
 
 
-        delegate void Notify();
+        delegate void Notify(string username);
 
-        static void SendEmail()
+        static void SendEmail(string username)
         {
-            Console.WriteLine("Email sent");
+            Console.WriteLine($"Email sent to {username}");
         }
 
-        static void SendSMS()
+        static void SendSMS(string username)
         {
-            Console.WriteLine("SMS sent.");
+            Console.WriteLine($"SMS sent to {username}");
         }
 
 
-        static void LogAction()
+        static void LogAction(string username)
         {
-            Console.WriteLine("Action Logged");
+            Console.WriteLine($"Action Logged for {username}");
+        }
+
+        static void SendFax(string username)
+        {
+            Console.WriteLine($"Fax sent to {username}");
         }
 
 
         static void Main(string[] args)
 
         {
-
-            //    // instantiate the delegate.
-            //    Callback handler = DelegateMethod;
-
-            //    // call the delegate
-            //    handler("Hello World");
-
-            //    // pass the delegate created
-            //    MethodWithCallback(1, 2, handler);
-
-            //    var obj = new MethodClass();
-            //    Callback d1 = obj.Method1;
-            //    Callback d2 = obj.Method2;
-            //    Callback d3 = DelegateMethod;
-
-            //    // Both types of assignment are valid. 
-            //    Callback allMethodDelegate = d1 + d2;
-            //    allMethodDelegate += d3;
-
-            //    // remove method 1 
-            //    allMethodDelegate -= d1;
-
-
-            //    // copy allmethodsdelegate while removing d2
-            //    Callback oneMethodDelegate = (allMethodDelegate - d2);
-
-            //    // number of methods in a delegate's invocation list, 
-            //    int invocationCount = d1.GetInvocationList().GetLength(0);
-            //    Console.WriteLine(invocationCount);
-
-            //var sc = new SampleClass();
-
-
-            ////Map the delegate to the instance method
-            //Callback d = sc.InstanceMethod;
-            //d();
-
-            ////Map the delegate to the static method
-            //d = SampleClass.StaticMethod;
-            //d();
+            string user = "Gloria";
 
             Notify notifyDelegate = SendEmail;
             notifyDelegate += SendSMS;
             notifyDelegate += LogAction;
+            notifyDelegate += SendFax;
 
-            notifyDelegate();
+            notifyDelegate(user);
 
             Console.ReadLine();
         }
