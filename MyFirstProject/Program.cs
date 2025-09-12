@@ -15,75 +15,121 @@ namespace MyFirstProject
 
     internal class Program
     {
+        //// declare delegate method
+        //public delegate void Callback(string message);
 
+        //// create a method for delegate
+        //public static void DelegateMethod(string message)
+        //{
+        //    Console.WriteLine(message);
+        //}
+
+
+        //public static void MethodWithCallback(int param1, int param2, Callback callback)
+        //{
+        //    callback("The number is: "+ (param1 + param2).ToString());
+        //}
+
+        //delegate void Callback1();
+        //delegate void Callback2();
+
+        //static void method(Callback1 d,Callback2 e,System.Delegate f)
+        //{
+        //    // compile time error
+        //    //Console.WriteLine(d==e);
+
+        //    //Console.WriteLine(d==f);
+
+        //}
+
+        //delegate void Callback();
+        //class SampleClass
+        //{
+        //    public void InstanceMethod()
+        //    {
+        //        Console.WriteLine("A meessage from the instance method.");
+        //    }
+
+        //    static public void StaticMethod()
+        //    {
+        //        Console.WriteLine("A message from the static method");
+        //    }
+        //}
+
+
+        delegate void Notify();
+
+        static void SendEmail()
+        {
+            Console.WriteLine("Email sent");
+        }
+
+        static void SendSMS()
+        {
+            Console.WriteLine("SMS sent.");
+        }
+
+
+        static void LogAction()
+        {
+            Console.WriteLine("Action Logged");
+        }
 
 
         static void Main(string[] args)
 
         {
-            List<Animal> animalList = new List<Animal>();
-            List<int> numList = new List<int>();
 
-            numList.Add(24);
+            //    // instantiate the delegate.
+            //    Callback handler = DelegateMethod;
 
-            animalList.Add(new Animal() { Name = "Dog" });
-            animalList.Add(new Animal() { Name = "Paul" });
-            animalList.Add(new Animal() { Name = "Sally" });
+            //    // call the delegate
+            //    handler("Hello World");
 
-            animalList.Insert(1, new Animal() { Name = "steve" });
-            animalList.RemoveAt(1);
+            //    // pass the delegate created
+            //    MethodWithCallback(1, 2, handler);
 
-            Console.WriteLine($"Num of Animals: {animalList.Count()}");
+            //    var obj = new MethodClass();
+            //    Callback d1 = obj.Method1;
+            //    Callback d2 = obj.Method2;
+            //    Callback d3 = DelegateMethod;
 
-            foreach (Animal a in animalList)
-            {
-                Console.WriteLine(a.Name);
-            }
+            //    // Both types of assignment are valid. 
+            //    Callback allMethodDelegate = d1 + d2;
+            //    allMethodDelegate += d3;
 
-            int x = 5, y = 4;
-            Animal.GetSum<int>(ref x, ref y);
+            //    // remove method 1 
+            //    allMethodDelegate -= d1;
 
-            string strX = "10", strY = "23";
-            Animal.GetSum<string>(ref strX, ref strY);
 
-            Rectangle<int> rec1 = new Rectangle<int>(20, 50);
-            Console.WriteLine(rec1.GetArea());
+            //    // copy allmethodsdelegate while removing d2
+            //    Callback oneMethodDelegate = (allMethodDelegate - d2);
 
-            Rectangle<string> rec2 = new Rectangle<string>("20", "12");
-            Console.WriteLine(rec2.GetArea());
+            //    // number of methods in a delegate's invocation list, 
+            //    int invocationCount = d1.GetInvocationList().GetLength(0);
+            //    Console.WriteLine(invocationCount);
+
+            //var sc = new SampleClass();
+
+
+            ////Map the delegate to the instance method
+            //Callback d = sc.InstanceMethod;
+            //d();
+
+            ////Map the delegate to the static method
+            //d = SampleClass.StaticMethod;
+            //d();
+
+            Notify notifyDelegate = SendEmail;
+            notifyDelegate += SendSMS;
+            notifyDelegate += LogAction;
+
+            notifyDelegate();
+
             Console.ReadLine();
         }
 
-        public struct Rectangle<T>
-        {
-            private T width;
-            private T length;
 
-            public T Width
-            {
-                get { return width; }
-                set { width=value; }
-            }
-
-            public T Length
-            {
-                get { return length; }
-                set { length = value; }
-            }
-
-            public Rectangle(T w,T l)
-            {
-                width = w;
-                length = l;
-            }
-
-            public string GetArea()
-            {
-                double dblWidth= Convert.ToDouble(width);
-                double dblLength= Convert.ToDouble(length);
-                return string.Format($"{Width} * {Length} = {dblWidth * dblLength}");
-            }
-        }
 
 
     }
