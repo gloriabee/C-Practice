@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,52 +58,84 @@ namespace MyFirstProject
         //}
 
 
-        delegate void Notify(string username);
+        //delegate void Notify(string username);
 
-        static void SendEmail(string username)
-        {
-            Console.WriteLine($"Email sent to {username}");
-        }
+        //static void SendEmail(string username)
+        //{
+        //    Console.WriteLine($"Email sent to {username}");
+        //}
 
-        static void SendSMS(string username)
-        {
-            Console.WriteLine($"SMS sent to {username}");
-        }
+        //static void SendSMS(string username)
+        //{
+        //    Console.WriteLine($"SMS sent to {username}");
+        //}
 
 
-        static void LogAction(string username)
-        {
-            Console.WriteLine($"Action Logged for {username}");
-        }
+        //static void LogAction(string username)
+        //{
+        //    Console.WriteLine($"Action Logged for {username}");
+        //}
 
-        static void SendFax(string username)
-        {
-            Console.WriteLine($"Fax sent to {username}");
-        }
+        //static void SendFax(string username)
+        //{
+        //    Console.WriteLine($"Fax sent to {username}");
+        //}
 
+
+
+        //static void SendEmail(string studentName,string studentEmail){
+
+        //    Console.WriteLine($"Email is sent to ${studentName}'s {studentEmail}");
+         
+        //}
+
+        //public bool IsValid(int age) {
+        //    if (age > 18)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
+
+
+        
+        
+        //public async Task<int> ExampleMethodAsync()
+        //{
+        //    var httpClient = new HttpClient();
+        //    int exampleInt = (await httpClient.GetStringAsync("http://msdn.microsoft.com")).Length;
+        //    return exampleInt;
+        //}
 
         static void Main(string[] args)
 
         {
-            string user = "Gloria";
-
-            Notify notifyDelegate = SendEmail;
-            notifyDelegate += SendSMS;
-            notifyDelegate += LogAction;
-            notifyDelegate += SendFax;
-
-            notifyDelegate(user);
-
+            Program program = new Program();
+            //calling static method
+            Print();
+            //calling instance method
+            program.DisplayMessage();
             Console.ReadLine();
+        }
+        //static method
+        static void Print()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Hello");
+            Console.WriteLine();
+        }
+        //instance method
+        void DisplayMessage()
+        {
+            Console.WriteLine("Hello from the Display " + "Message method!");
         }
 
 
-
-
     }
 
     }
-
-
 
 
