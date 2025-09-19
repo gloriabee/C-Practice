@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,40 +9,23 @@ namespace MyFirstProject
 {
     internal class Car
     {
-        //ာmember variable 
         private string _model = "";
         private string _brand = "";
+        private bool _isLuxury;
 
-        //property
-   
-        public string Model { get => _model; set => _model = value; }
-        public string Brand { get => _brand; 
-            set{
-                if (string.IsNullOrEmpty(value))
-                {
-                    Console.WriteLine("You entered nothing!");
-                    _brand = "DefaultValue";
-                }
-                else
-                {
-                    _brand = value;
-                }
-                   
-            } }
-
-
-
-        //Constructor
-        public Car(string model,string brand) {
-            Model = model;
-            Brand = brand;
-            Console.WriteLine($"A {Brand} of the model {Model} has been created");
-
+        public Car(string model,string brand,bool isLuxury=false)
+        {
+            _model= model;
+            _brand = brand;
+            _isLuxury=isLuxury;
         }
 
+        public void Drive()
+        {
+            Console.WriteLine($"I am a {_model} and I am driving");
+        }
 
-
-
+        
 
     }
 }

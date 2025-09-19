@@ -16,123 +16,109 @@ namespace MyFirstProject
 
     internal class Program
     {
-        //// declare delegate method
-        //public delegate void Callback(string message);
+        // default parameter
+        static void Display(int x)
+        {
+            Console.WriteLine("Value Parameter: "+x);
+        }
 
-        //// create a method for delegate
-        //public static void DelegateMethod(string message)
-        //{
-        //    Console.WriteLine(message);
-        //}
-
-
-        //public static void MethodWithCallback(int param1, int param2, Callback callback)
-        //{
-        //    callback("The number is: "+ (param1 + param2).ToString());
-        //}
-
-        //delegate void Callback1();
-        //delegate void Callback2();
-
-        //static void method(Callback1 d,Callback2 e,System.Delegate f)
-        //{
-        //    // compile time error
-        //    //Console.WriteLine(d==e);
-
-        //    //Console.WriteLine(d==f);
-
-        //}
-
-        //delegate void Callback();
-        //class SampleClass
-        //{
-        //    public void InstanceMethod()
-        //    {
-        //        Console.WriteLine("A meessage from the instance method.");
-        //    }
-
-        //    static public void StaticMethod()
-        //    {
-        //        Console.WriteLine("A message from the static method");
-        //    }
-        //}
+        //reference parameter 
+        static void Update(ref int y)
+        {
+            y += 5;
+            Console.WriteLine("Reference Parameter: "+y);
+        }
 
 
-        //delegate void Notify(string username);
+        //output parameter 
+        static void GetValues(out int z)
+        {
+            //assign value to output parameter
+            z = 20;
+            Console.WriteLine("Output parameter: "+z);
+        }
 
-        //static void SendEmail(string username)
-        //{
-        //    Console.WriteLine($"Email sent to {username}");
-        //}
+        //returning multiple values
+        static void Calculate(int x,int y,out int sum, out int product)
+        {
+            sum = x + y;
+            product = x * y;
+        }
 
-        //static void SendSMS(string username)
-        //{
-        //    Console.WriteLine($"SMS sent to {username}");
-        //}
+        //in 
+        static void PrintValue(in int number)
+        {
+            Console.WriteLine(number);
+        }
+        //Countdown Recursion
+        static void CountDown(int number)
+        {
+            //Base Case: stop when we reach 0
+            if (number == 0)
+            {
+                Console.WriteLine("Blast Off!");
+                return;
+            }
 
+            Console.WriteLine(number);
 
-        //static void LogAction(string username)
-        //{
-        //    Console.WriteLine($"Action Logged for {username}");
-        //}
-
-        //static void SendFax(string username)
-        //{
-        //    Console.WriteLine($"Fax sent to {username}");
-        //}
-
-
-
-        //static void SendEmail(string studentName,string studentEmail){
-
-        //    Console.WriteLine($"Email is sent to ${studentName}'s {studentEmail}");
-         
-        //}
-
-        //public bool IsValid(int age) {
-        //    if (age > 18)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
+            CountDown(number - 1);
+        }
 
 
-        
-        
-        //public async Task<int> ExampleMethodAsync()
-        //{
-        //    var httpClient = new HttpClient();
-        //    int exampleInt = (await httpClient.GetStringAsync("http://msdn.microsoft.com")).Length;
-        //    return exampleInt;
-        //}
+        //Factorial Function Using Recursion
 
+        static int Factorial(int n)
+        {
+            if(n==0 || n == 1)
+            {
+                return 1;
+            }
+
+            return n * Factorial(n - 1);
+        }
+
+        class MathOperations
+        {
+            public int Square(int number) => number * number;
+        }
+
+        class FileHandler
+        {
+            ~FileHandler() => Console.WriteLine("Finalizer called!");
+        }
+
+        class Collection
+        {
+            private int[] numbers = { 1, 2, 3, 4, 5 };
+            public int this[int index]=> numbers[index];
+             
+        }
+
+        static int AddNum(int firstNum,int secondNum)
+        {
+            return firstNum + secondNum;
+        }
+
+       
         static void Main(string[] args)
 
         {
-            Program program = new Program();
-            //calling static method
-            Print();
-            //calling instance method
-            program.DisplayMessage();
+            Notifier notifier = new Notifier();
+            notifier.Send("Gloria", "Hello");
+            notifier.Send("System updated");
+            notifier.Send("Bob", "Busy", 1);
             Console.ReadLine();
-        }
-        //static method
-        static void Print()
-        {
-            Console.WriteLine();
-            Console.WriteLine("Hello");
-            Console.WriteLine();
-        }
-        //instance method
-        void DisplayMessage()
-        {
-            Console.WriteLine("Hello from the Display " + "Message method!");
-        }
 
+            //Console.WriteLine(AddNum(15, 25));
+            //Console.WriteLine(AddNum(firstNum: 23, secondNum: 21));
+            //Console.WriteLine(AddNum(23, secondNum: 100));
+            //Console.WriteLine(AddNum(firstNum:100,200));
+
+
+
+        }
+      
 
     }
 
